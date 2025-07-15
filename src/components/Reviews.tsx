@@ -191,7 +191,7 @@ export default function Reviews() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
               >
-                "{review.comment}"
+                &ldquo;{review.comment}&rdquo;
               </motion.p>
 
               {/* Author */}

@@ -14,6 +14,9 @@ export default async function LocaleCatchAllPage({
 }) {
   const { locale, slug } = await params
   
+  // Log the attempted access for debugging
+  console.log(`Attempted to access: /${locale}/${slug.join('/')}`)
+  
   // For any path that doesn't exist, show 404
   notFound()
 } 

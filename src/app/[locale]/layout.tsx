@@ -1,4 +1,5 @@
 import { translations, type Locale } from '@/lib/translations'
+import Navigation from '@/components/Navigation'
 
 export async function generateStaticParams() {
   return Object.keys(translations).map((locale) => ({
@@ -15,7 +16,8 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params
   return (
-    <div>
+    <div lang={locale}>
+      <Navigation />
       {children}
     </div>
   )

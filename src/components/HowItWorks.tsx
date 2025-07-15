@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { translations, type Locale } from '@/lib/translations';
 
@@ -14,8 +13,6 @@ const HowItWorks = () => {
     ? pathSegments[1] as Locale 
     : 'de';
   const t = translations[locale].howItWorks;
-
-  const [activeStep, setActiveStep] = useState(0);
 
   const stepIcons = ['🎵', '📱', '🎮', '🏆'];
   const stepColors = [

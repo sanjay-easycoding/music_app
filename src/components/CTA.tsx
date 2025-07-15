@@ -12,41 +12,54 @@ export default function CTA() {
   const locale = pathSegments[1] && ['en', 'de'].includes(pathSegments[1]) 
     ? pathSegments[1] as Locale 
     : 'de'
-  const t = translations[locale]
+  const t = translations[locale].cta;
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
+        staggerChildren: 0.3,
+        delayChildren: 0.2
       }
     }
-  }
+  };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6
+        duration: 0.8,
+        type: "spring",
+        stiffness: 100
       }
     }
-  }
+  };
 
-  const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      rotate: [0, 5, -5, 0],
+  const buttonVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
       transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut"
+        duration: 0.6,
+        type: "spring",
+        stiffness: 200
       }
+    },
+    hover: {
+      scale: 1.05,
+      boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)",
+      transition: {
+        duration: 0.3
+      }
+    },
+    tap: {
+      scale: 0.95
     }
-  }
+  };
 
   return (
     <section className="py-20 bg-gradient-to-r from-purple-600 to-blue-600 relative overflow-hidden">
@@ -141,7 +154,7 @@ export default function CTA() {
             >
               ⏰
             </motion.span>
-            <span className="relative z-10">{t.cta.urgency}</span>
+            <span className="relative z-10">{t.urgency}</span>
           </motion.div>
 
           {/* Title */}
@@ -149,7 +162,7 @@ export default function CTA() {
             className="text-4xl md:text-6xl font-bold text-white mb-4"
             variants={itemVariants}
           >
-            {t.cta.title.split(' ').map((word, index) => (
+            {t.title.split(' ').map((word, index) => (
               <motion.span
                 key={index}
                 className="inline-block mr-2"
@@ -178,7 +191,7 @@ export default function CTA() {
             className="text-xl text-purple-100 mb-8"
             variants={itemVariants}
           >
-            {t.cta.subtitle}
+            {t.subtitle}
           </motion.p>
 
           {/* Pricing */}
@@ -194,17 +207,17 @@ export default function CTA() {
               }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              {t.cta.price}
+              {t.price}
             </motion.span>
             <span className="text-3xl text-purple-200 line-through">
-              {t.cta.originalPrice}
+              {t.originalPrice}
             </span>
           </motion.div>
 
           {/* CTA Button */}
           <motion.button 
             className="bg-white text-purple-600 hover:bg-gray-100 font-bold py-6 px-12 rounded-full text-xl transition-all duration-200 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden"
-            variants={itemVariants}
+            variants={buttonVariants}
             whileHover={{ 
               scale: 1.05,
               y: -5,
@@ -225,7 +238,7 @@ export default function CTA() {
               }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              {t.cta.button}
+              {t.button}
             </motion.span>
           </motion.button>
 
