@@ -145,25 +145,20 @@ export default function Navigation() {
               className="hidden sm:block"
             >
               <Link
-                href="#"
-                className="relative group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden"
+                href="#cta"
+                className="px-6 py-3 rounded-xl font-medium text-white hover:text-blue-400 transition-colors duration-200 flex items-center"
               >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                />
-                <span className="relative z-10 flex items-center space-x-2">
-                  <span>{t.header.cart}</span>
-                  <motion.svg 
-                    className="w-4 h-4" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                    whileHover={{ x: 2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </motion.svg>
-                </span>
+                <span> {t.header.cart} </span>
+                <motion.svg 
+                  className="w-4 h-4 ml-2" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                  whileHover={{ x: 2 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </motion.svg>
               </Link>
             </motion.div>
 
@@ -222,7 +217,7 @@ export default function Navigation() {
                 className="pt-2"
               >
                 <Link
-                  href="#"
+                  href="#cta"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-3 rounded-xl font-medium transition-all duration-300"
                 >

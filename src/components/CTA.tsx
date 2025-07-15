@@ -62,7 +62,7 @@ export default function CTA() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-purple-600 to-blue-600 relative overflow-hidden">
+    <section id="cta" className="py-20 bg-gradient-to-r from-purple-600 to-blue-600 relative overflow-hidden">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
