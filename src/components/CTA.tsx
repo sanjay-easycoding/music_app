@@ -32,7 +32,7 @@ export default function CTA() {
       y: 0,
       transition: {
         duration: 0.8,
-        type: "spring",
+        type: 'spring' as const,
         stiffness: 100
       }
     }
@@ -45,7 +45,7 @@ export default function CTA() {
       scale: 1,
       transition: {
         duration: 0.6,
-        type: "spring",
+        type: 'spring' as const,
         stiffness: 200
       }
     },
