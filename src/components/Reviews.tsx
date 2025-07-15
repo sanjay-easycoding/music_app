@@ -33,7 +33,7 @@ export default function Reviews() {
       scale: 1,
       transition: {
         duration: 0.6,
-        type: "spring",
+        type: 'spring' as const,
         stiffness: 100
       }
     }
@@ -46,7 +46,7 @@ export default function Reviews() {
       transition: {
         duration: 4,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: 'easeInOut' as const
       }
     }
   }
@@ -237,7 +237,7 @@ export default function Reviews() {
               y: -3,
             }}
             whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            transition={{ type: 'spring' as const, stiffness: 300 }}
           >
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 opacity-0"

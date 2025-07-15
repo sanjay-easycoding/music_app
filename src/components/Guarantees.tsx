@@ -58,7 +58,7 @@ export default function Guarantees() {
       scale: 1.2,
       rotate: 360,
       transition: {
-        type: "spring",
+        type: 'spring' as const,
         stiffness: 300
       }
     }

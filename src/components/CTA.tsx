@@ -224,7 +224,7 @@ export default function CTA() {
               boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
             }}
             whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300 }}
+                            transition={{ type: 'spring' as const, stiffness: 300 }}
           >
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 opacity-0"

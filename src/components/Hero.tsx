@@ -26,12 +26,14 @@ export default function Hero() {
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6
+        duration: 0.8,
+        type: 'spring' as const,
+        stiffness: 100
       }
     }
   }
@@ -239,7 +241,7 @@ export default function Hero() {
                   boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
                 }}
                 whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                transition={{ type: 'spring' as const, stiffness: 300 }}
               >
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 opacity-0"
@@ -264,7 +266,7 @@ export default function Hero() {
                   borderColor: "#8b5cf6"
                 }}
                 whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                transition={{ type: 'spring' as const, stiffness: 300 }}
               >
                 {t.hero.secondaryCta}
               </motion.button>
@@ -322,7 +324,7 @@ export default function Hero() {
                     <motion.div 
                       className="w-24 h-32 bg-purple-200 dark:bg-purple-700 rounded-lg mx-auto mb-4 flex items-center justify-center shadow-lg"
                       whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 300 }}
+                      transition={{ type: 'spring' as const, stiffness: 300 }}
                     >
                       <div className="text-center">
                         <motion.div 
@@ -357,7 +359,7 @@ export default function Hero() {
                     <motion.div 
                       className="w-16 h-16 bg-purple-200 dark:bg-purple-800 rounded-full mx-auto mb-3 flex items-center justify-center"
                       whileHover={{ scale: 1.2, rotate: 360 }}
-                      transition={{ type: "spring", stiffness: 300 }}
+                      transition={{ type: 'spring' as const, stiffness: 300 }}
                     >
                       <motion.svg 
                         className="w-8 h-8 text-purple-600 dark:text-purple-400" 

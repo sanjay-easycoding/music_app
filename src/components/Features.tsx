@@ -57,10 +57,10 @@ export default function Features() {
 
   const iconVariants = {
     hover: {
-      scale: 1.1,
-      rotate: 5,
+      scale: 1.2,
+      rotate: 360,
       transition: {
-        type: "spring",
+        type: 'spring' as const,
         stiffness: 300
       }
     }
